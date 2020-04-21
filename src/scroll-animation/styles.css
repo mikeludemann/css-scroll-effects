@@ -1,0 +1,79 @@
+.wrapper {
+	display: -webkit-box;
+	display: flex;
+	height: 100vh;
+	-webkit-box-align: center;
+		align-items: center;
+	box-sizing: border-box;
+}
+
+.card {
+	margin: 0 20px;
+  max-width: 300px;
+  height: 36vh;
+	flex-shrink: 0;
+	padding: 2vw;
+	box-sizing: border-box;
+	position: relative;
+	border-radius: 3px;
+	border: 2px solid #000;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: justify;
+		justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+		flex-direction: column;
+	box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+	-webkit-transition: .3s;
+	transition: .3s;
+	text-align: center;
+	margin: 2vw 0 0;
+	font-size: 2.8vw;
+	opacity: 0;
+	-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+}
+
+.card:last-child:after {
+	content: "";
+	width: 6vw;
+	position: absolute;
+	height: 100%;
+	right: -6vw;
+	top: 0;
+}
+
+.card img {
+	max-width: 70%;
+	max-height: 50vh;
+	opacity: 0;
+	margin: auto;
+	display: block;
+	-webkit-transition: .35s;
+	transition: .35s;
+	-webkit-transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+		transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+}
+
+.card.isVisible img {
+	max-width: 100%;
+	opacity: 1;
+	-webkit-transform: none;
+		transform: none;
+}
+
+.card.isVisible .card-title {
+	opacity: 1;
+	-webkit-transform: none;
+		transform: none;
+	-webkit-transition-delay: .1s;
+		transition-delay: .1s;
+}
+
+.card:first-child {
+	margin-left: 6vw;
+}
